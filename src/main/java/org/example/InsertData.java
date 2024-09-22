@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 public class InsertData {
-    private static final String URL = "jdbc:postgresql://localhost:5432/mydb";
-    private static final String USER = "user";
-    private static final String PASSWORD = "password";
+    private static final String URL = "jdbc:postgresql://localhost:5432/jdbc1";
+    private static final String USER = "admin";
+    private static final String PASSWORD = "admin";
 
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
