@@ -10,7 +10,7 @@ public class InsertData {
     private static final String URL = "jdbc:postgresql://localhost:5439/jdbc1";
     private static final String USER = "sa";
     private static final String PASSWORD = "admin";
-    private static final String sql = "INSERT INTO notice1(message, type, processed) VALUES (?, ?, false)";
+    private static final String sql = "INSERT INTO notice(message, type, processed) VALUES (?, ?, false)";
 
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
