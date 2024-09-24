@@ -7,9 +7,10 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 public class InsertData {
-    private static final String URL = "jdbc:postgresql://localhost:5432/jdbc1";
-    private static final String USER = "admin";
+    private static final String URL = "jdbc:postgresql://localhost:5439/jdbc1";
+    private static final String USER = "sa";
     private static final String PASSWORD = "admin";
+    private static final String sql = "INSERT INTO notice1(message, type, processed) VALUES (?, ?, false)";
 
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
@@ -22,7 +23,7 @@ public class InsertData {
                         "Новое сообщение от " + LocalDateTime.now() :
                         "Произошла ошибка в " + LocalDateTime.now();
 
-                String sql = "INSERT INTO notice (message, type, processed) VALUES (?, ?, false)";
+
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
                     statement.setString(1, message);
                     statement.setString(2, type);
