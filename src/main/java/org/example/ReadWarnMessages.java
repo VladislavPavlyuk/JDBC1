@@ -23,7 +23,7 @@ public class ReadWarnMessages {
                         String message = resultSet.getString("message");
                         System.out.println(message);
 
-                        String updateSql = "UPDATE notice SET processed = true WHERE serial_id = ?";
+                        String updateSql = "UPDATE notice SET processed = false WHERE serial_id = ?";
                         try (PreparedStatement updateStatement = connection.prepareStatement(updateSql)) {
                             updateStatement.setInt(1, id);
                             updateStatement.executeUpdate();
