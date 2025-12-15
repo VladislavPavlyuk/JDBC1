@@ -20,8 +20,8 @@ public class InsertData {
             while (true) {
                 String type = types[random.nextInt(types.length)];
                 String message = type.equals("INFO") ?
-                        "Новое сообщение от " + LocalDateTime.now() :
-                        "Произошла ошибка в " + LocalDateTime.now();
+                        "New message from " + LocalDateTime.now() :
+                        "Error occurred at " + LocalDateTime.now();
 
 
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
